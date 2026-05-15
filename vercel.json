@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/solar-technology", "destination": "/solar-technology/index.html" },
+    { "source": "/solar-technology/(.*)", "destination": "/solar-technology/$1" }
+  ]
+}
