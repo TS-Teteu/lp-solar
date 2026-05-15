@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Technology — Energia Solar em Arapongas, PR</title>
+  <meta name="description" content="Economize até 95% na sua conta de energia. Solar Technology: energia solar fotovoltaica residencial e empresarial em Arapongas e região. CREA 73962, ISO-9001.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #080808;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: rgba(255,255,255,0.07);
+      --solar: #f5a623;
+      --solar-light: #ffbe5c;
+      --solar-dim: rgba(245,166,35,0.12);
+      --white: #ffffff;
+      --gray: #888888;
+      --text: #e8e8e8;
+      --font: 'Outfit', sans-serif;
+      --radius: 1.25rem;
+      --radius-sm: 0.75rem;
+      --max: 1280px;
+      --transition: 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* BADGE */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--solar-dim);
+      border: 1px solid rgba(245,166,35,0.25);
+      color: var(--solar);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--solar);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(0.7); }
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--solar);
+      color: #000;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: var(--solar-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(245,166,35,0.35);
+    }
+
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 3rem);
+      max-width: 1100px;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .nav-logo span { color: var(--solar); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta { font-size: 0.875rem !important; padding: 0.6rem 1.4rem !important; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      nav { width: calc(100% - 2rem); }
+    }
+
+    /* ─── HERO ─── */
+    .hero-left { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.03em; color: var(--white);
+    }
+
+    .hero-title .accent { color: var(--solar); }
+
+    .hero-sub {
+      font-size: 1.05rem; color: var(--gray);
+      max-width: 52ch; line-height: 1.7;
+    }
+
+    .hero-trust { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+    .trust-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; color: var(--gray); font-weight: 500;
+    }
+
+    .trust-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--solar-dim); border: 1px solid rgba(245,166,35,0.2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .trust-icon svg { width: 14px; height: 14px; fill: var(--solar); }
+
+    .hero-form-wrap { position: relative; }
+
+    .form-glow {
+      position: absolute; inset: -40px;
+      background: radial-gradient(ellipse at center, rgba(245,166,35,0.08) 0%, transparent 70%);
+      pointer-events: none; border-radius: 50%;
+    }
+
+    .form-card {
+      background: rgba(17,17,17,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border); border-radius: 1.75rem; padding: 2.5rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+      position: relative;
+    }
+
+    .form-card-header { margin-bottom: 1.75rem; }
+
+    .form-card-header h2 {
+      font-size: 1.4rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em; margin-bottom: 0.4rem;
+    }
+
+    .form-card-header p { font-size: 0.875rem; color: var(--gray); }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+
+    .form-group label {
+      font-size: 0.8rem; font-weight: 600; color: #aaa;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+
+    .form-group input, .form-group select {
+      background: rgba(26,26,26,0.9); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--white);
+      font-family: var(--font); font-size: 0.95rem; padding: 0.8rem 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%; appearance: none;
+    }
+
+    .form-group input::placeholder { color: #444; }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: rgba(245,166,35,0.5); box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+    }
+
+    .form-group select option { background: #1a1a1a; }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #555;
+      margin-top: 0.75rem;
+    }
+
+    /* ─── SCROLL VIDEO HERO ─── */
+    #hero-wrapper {
+      height: 200vh;
+      position: relative;
+    }
+
+    #hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    #hero {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      padding: 4rem 2rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .hero-video-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      margin-top: 1rem;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    #hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,8,8,0.7) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    /* scroll progress bar */
+    #scroll-progress-bar {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--solar), var(--solar-light));
+      width: 0%;
+      z-index: 10;
+      transition: width 0.05s linear;
+    }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeHint 1s ease 1.5s both;
+    }
+
+    @keyframes fadeHint {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    .scroll-hint span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .scroll-hint-arrow {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, rgba(245,166,35,0.8), transparent);
+      animation: arrowPulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes arrowPulse {
+      0%,100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.15); }
+    }
+
+    @media (max-width: 900px) {
+      #hero-wrapper { height: auto; }
+      #hero-sticky { height: auto; position: relative; }
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.5rem 3rem;
+        gap: 1.5rem;
+      }
+      .hero-title { font-size: 2.2rem; }
+      .hero-sub, .hero-trust { display: none; }
+      .scroll-hint, #scroll-progress-bar { display: none; }
+      .hero-video-container {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Solar<span>Technology</span></div>
+    <ul class="nav-links">
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+    </ul>
+    <a href="#orcamento" class="btn-primary nav-cta">Orçamento grátis</a>
+  </div>
+</nav>
+
+<!-- HERO SCROLL WRAPPER -->
+<div id="hero-wrapper">
+  <div id="hero-sticky">
+
+    <!-- HERO CONTENT -->
+    <div id="hero">
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Pare de pagar<br>
+          caro pela energia.<br>
+          <span class="accent">Gere a sua própria.</span>
+        </h1>
+        <p class="hero-sub">
+          A Solar Technology instala sistemas fotovoltaicos que reduzem sua conta de luz em até 95%.
+          Solução completa para residências e empresas, com garantia, equipe própria e certificação ISO-9001.
+        </p>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            ISO-9001 certificada
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Equipe própria de instalação
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            25 anos de garantia
+          </div>
+        </div>
+
+        <!-- VIDEO CONTAINER (BELOW TEXT) -->
+        <div class="hero-video-container">
+          <video id="hero-video" muted playsinline preload="auto">
+            <source src="hero-video.mp4" type="video/mp4">
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="hero-form-wrap" id="orcamento">
+        <div class="form-glow"></div>
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Simulação gratuita</h2>
+            <p>Descubra quanto você vai economizar por mês</p>
+          </div>
+          <form id="lead-form">
+            <div class="form-group">
+              <label for="nome">Seu nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Ex: Carlos Mendes" required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(43) 99999-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Arapongas, PR" required>
+            </div>
+            <div class="form-group">
+              <label for="tipo">Tipo de imóvel</label>
+              <select id="tipo" name="tipo" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="residencial">Residencial</option>
+                <option value="comercial">Comercial</option>
+                <option value="industrial">Industrial</option>
+                <option value="rural">Rural</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="conta">Valor médio da conta de luz</label>
+              <select id="conta" name="conta" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="ate300">Até R$ 300</option>
+                <option value="300-600">R$ 300 a R$ 600</option>
+                <option value="600-1000">R$ 600 a R$ 1.000</option>
+                <option value="1000-2000">R$ 1.000 a R$ 2.000</option>
+                <option value="acima2000">Acima de R$ 2.000</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary form-submit" id="submit-btn">
+              Quero minha simulação grátis
+            </button>
+            <p class="form-note">Sem compromisso. Retorno em até 24h.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress-bar"></div>
+
+    <!-- SCROLL HINT -->
+    <div class="scroll-hint">
+      <span>Role para ver</span>
+      <div class="scroll-hint-arrow"></div>
+    </div>
+
+  </div><!-- /hero-sticky -->
+</div><!-- /hero-wrapper -->
+
+
+<!-- PLACEHOLDER FOR NEXT SECTIONS -->
+
+<style>
+  /* ─── STATS ─── */
+  #stats {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    padding: 3rem 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stat-item {}
+
+  .stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--solar);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  .stat-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ─── BENEFITS ─── */
+  #beneficios {
+    padding: 7rem 2rem;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+  }
+
+  .section-header .badge { margin-bottom: 1rem; }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    max-width: 22ch;
+  }
+
+  .section-title .accent { color: var(--solar); }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-top: 1rem;
+    max-width: 55ch;
+    line-height: 1.7;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--solar), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .benefit-card:hover {
+    border-color: rgba(245,166,35,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+
+  .benefit-card:hover::before { opacity: 1; }
+
+  .benefit-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: var(--solar-dim);
+    border-color: rgba(245,166,35,0.2);
+  }
+
+  .benefit-icon {
+    width: 48px; height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--solar-dim);
+    border: 1px solid rgba(245,166,35,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .benefit-icon svg {
+    width: 24px; height: 24px;
+    stroke: var(--solar);
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+
+  .featured-number {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--solar);
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  .featured-number span { font-size: 2.5rem; }
+
+  .featured-text h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-text p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    #beneficios { padding: 4rem 1.5rem; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .benefit-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- STATS BAR -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">+500</div>
+      <div class="stat-label">Projetos entregues</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">95%</div>
+      <div class="stat-label">Redução na conta de luz</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">25</div>
+      <div class="stat-label">Anos de garantia</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">ISO</div>
+      <div class="stat-label">9001 certificada</div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="beneficios">
+  <div class="section-header">
+    <span class="badge">Por que energia solar</span>
+    <h2 class="section-title">Seu dinheiro trabalhando <span class="accent">por você</span></h2>
+    <p class="section-sub">Instalar energia solar não é custo — é investimento. Com retorno médio em 4 anos e vida útil de 25+, cada painel é rentabilidade garantida.</p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card featured">
+      <div>
+        <div class="featured-number">95<span>%</span></div>
+        <p style="font-size:0.8rem;color:var(--solar);font-weight:600;margin-top:0.25rem;letter-spacing:0.05em;text-transform:uppercase;">de economia possível</p>
+      </div>
+      <div class="featured-text">
+        <h3>Pare de pagar para a distribuidora de energia</h3>
+        <p>Com painéis fotovoltaicos na sua residência ou empresa, você gera sua própria energia e reduz a conta em até 95%. O excedente ainda pode virar crédito na fatura.</p>
+        <a href="#orcamento" class="btn-primary">Simular minha economia</a>
+      </div>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+      </div>
+      <h3>Valorização do imóvel</h3>
+      <p>Imóveis com energia solar valem em média 8% mais no mercado. É economia no presente e patrimônio no futuro.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h3>Independência das bandeiras</h3>
+      <p>Chega de sofrer com bandeiras vermelha e amarela. Produza sua energia e fique livre dos reajustes da concessionária.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      </div>
+      <h3>Zero emissão de carbono</h3>
+      <p>Energia 100% limpa e renovável. Contribua com o meio ambiente sem abrir mão do conforto.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3>Financiamento facilitado</h3>
+      <p>Parcelamos em até 84x com as melhores taxas do mercado. Sua economia mensal já cobre a parcela do financiamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEHOLDER PART 3 -->
+
+<style>
+  /* ─── HOW IT WORKS ─── */
+  #como-funciona {
+    padding: 7rem 2rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% + 28px);
+    right: calc(12.5% + 28px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--solar) 0%, rgba(245,166,35,0.15) 100%);
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--solar);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--solar);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 6px var(--surface);
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .step p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ─── PROJETOS / LOGOS ─── */
+  #projetos {
+    padding: 7rem 2rem;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .projeto-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .projeto-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245,166,35,0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .projeto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .projeto-img-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--surface2) 0%, #222 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projeto-img-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://picsum.photos/seed/solar1/600/400') center/cover no-repeat;
+    opacity: 0.35;
+  }
+
+  .projeto-img-placeholder svg {
+    width: 48px; height: 48px;
+    fill: none;
+    stroke: var(--solar);
+    stroke-width: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .projeto-info {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .projeto-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--solar);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .projeto-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .projeto-info p {
+    font-size: 0.82rem;
+    color: var(--gray);
+    margin-top: 0.25rem;
+  }
+
+  /* LOGOS MARQUEE */
+  .logos-strip {
+    margin-top: 5rem;
+    border-top: 1px solid var(--border);
+    padding-top: 3rem;
+  }
+
+  .logos-label {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .marquee-wrap {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 20s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .logo-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  @media (max-width: 768px) {
+    #como-funciona { padding: 4rem 1.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-steps::before { display: none; }
+    #projetos { padding: 4rem 1.5rem; }
+    .projetos-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- HOW IT WORKS -->
+<section id="como-funciona">
+  <div class="process-wrap">
+    <div class="section-header">
+      <span class="badge">Processo simples</span>
+      <h2 class="section-title">Do projeto à <span class="accent">energia gerada</span></h2>
+      <p class="section-sub">Cuidamos de tudo, do levantamento técnico à homologação com a concessionária. Você só aproveita a economia.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Simulação gratuita</h3>
+        <p>Analisamos seu consumo e calculamos o sistema ideal para sua necessidade e orçamento.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Projeto técnico</h3>
+        <p>Nossa equipe com CREA elabora o projeto fotovoltaico personalizado para o seu imóvel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Instalação própria</h3>
+        <p>Equipe qualificada e certificada realiza a instalação com segurança e acabamento impecável.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Energia & economia</h3>
+        <p>Homologamos junto à concessionária e você começa a economizar desde o primeiro mês.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projetos">
+  <div class="section-header">
+    <span class="badge">Projetos realizados</span>
+    <h2 class="section-title">Quem já <span class="accent">economiza</span> com a gente</h2>
+    <p class="section-sub">Projetos residenciais, comerciais, industriais e rurais em toda a região de Arapongas e Londrina.</p>
+  </div>
+
+  <div class="projetos-grid">
+    <div class="projeto-card">
+      <div class="projeto-img-placeholder">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <div class="projeto-info">
+        <div class="projeto-tag">Residencial</div>
+        <h3>Sistema 6,6 kWp</h3>
+        <p>Arapongas, PR · Economia de R$ 580/mês</p>
+      </div>
+    </div>
+    <div class="projeto-card">
+      <div class="projeto-img-placeholder" style="--seed:solar2">
+        <svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0H5m14 0h-5m-9 0H3m2 0h5m0 0V9a1 1 0 011-1h2a1 1 0 011 1v12"/></svg>
+      </div>
+      <div class="projeto-info">
+        <div class="projeto-tag">Comercial</div>
+        <h3>Usina 42 kWp · Moval Móveis</h3>
+        <p>Arapongas, PR · Economia de R$ 4.200/mês</p>
+      </div>
+    </div>
+    <div class="projeto-card">
+      <div class="projeto-img-placeholder" style="--seed:solar3">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      </div>
+      <div class="projeto-info">
+        <div class="projeto-tag">Industrial</div>
+        <h3>Usina 120 kWp · Concrenorte</h3>
+        <p>Arapongas, PR · Economia de R$ 11.400/mês</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="logos-strip">
+    <p class="logos-label">Empresas que confiam na Solar Technology</p>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <div class="logo-pill">Móveis Matrix</div>
+        <div class="logo-pill">Moval Móveis</div>
+        <div class="logo-pill">Concrenorte</div>
+        <div class="logo-pill">Atom Academia</div>
+        <div class="logo-pill">EC Laranja Mecânica</div>
+        <div class="logo-pill">Padaria Chik</div>
+        <div class="logo-pill">Artem Arapongas</div>
+        <div class="logo-pill">Aviário Kirilko</div>
+        <div class="logo-pill">Móveis Matrix</div>
+        <div class="logo-pill">Moval Móveis</div>
+        <div class="logo-pill">Concrenorte</div>
+        <div class="logo-pill">Atom Academia</div>
+        <div class="logo-pill">EC Laranja Mecânica</div>
+        <div class="logo-pill">Padaria Chik</div>
+        <div class="logo-pill">Artem Arapongas</div>
+        <div class="logo-pill">Aviário Kirilko</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEHOLDER PART 4 -->
+
+<style>
+  /* ─── FAQ ─── */
+  #faq {
+    padding: 7rem 2rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-list { margin-top: 3rem; }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: color 0.2s;
+    font-family: var(--font);
+  }
+
+  .faq-question:hover { color: var(--solar); }
+
+  .faq-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+    color: var(--gray);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--solar-dim);
+    border-color: rgba(245,166,35,0.3);
+    color: var(--solar);
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .faq-answer-inner {
+    padding-bottom: 1.5rem;
+    font-size: 0.92rem;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ─── CTA SECTION ─── */
+  #cta-final {
+    padding: 7rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta-final::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 1rem 0;
+  }
+
+  .cta-inner h2 .accent { color: var(--solar); }
+
+  .cta-inner p {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand .nav-logo { font-size: 1.25rem; margin-bottom: 0.75rem; }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.65;
+    max-width: 32ch;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-contact-item a:hover { color: var(--solar); }
+
+  .footer-col h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li { margin-bottom: 0.5rem; }
+
+  .footer-col a {
+    font-size: 0.875rem;
+    color: var(--gray);
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--solar); }
+
+  .footer-bottom {
+    max-width: var(--max);
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #555;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .crea-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--solar-dim);
+    border: 1px solid rgba(245,166,35,0.2);
+    color: var(--solar);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+  }
+
+  @media (max-width: 768px) {
+    #faq { padding: 4rem 1.5rem; }
+    #cta-final { padding: 5rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-wrap">
+    <div class="section-header" style="text-align:center;max-width:100%">
+      <span class="badge">Perguntas frequentes</span>
+      <h2 class="section-title" style="max-width:100%;text-align:center">Tire suas <span class="accent">dúvidas</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Quanto tempo leva para o sistema se pagar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Em média, entre 3 e 5 anos. Após esse período, você gera energia praticamente de graça por mais de 20 anos. O retorno do investimento é superior ao de muitas aplicações financeiras.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Funciona em dias nublados ou chuvosos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim. Os painéis fotovoltaicos funcionam com luz difusa, não apenas com sol pleno. Em dias nublados, a geração é reduzida (cerca de 10-25% do potencial máximo), mas o sistema continua gerando energia.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Posso financiar o sistema?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim! Trabalhamos com as principais linhas de crédito do mercado, como o financiamento solar do Banco do Brasil, Caixa e outras instituições. Em muitos casos, a parcela mensal é menor que a economia gerada na conta de luz.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Precisa de manutenção frequente?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Não. A manutenção é mínima — basicamente a limpeza dos painéis a cada 6 meses. Os equipamentos têm vida útil superior a 25 anos e oferecemos suporte técnico completo no pós-venda.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          A Solar Technology cuida da homologação junto à COPEL?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim. Cuidamos de todo o processo burocrático: projeto técnico assinado por engenheiro (CREA 73962), documentação e homologação junto à concessionária. Você não precisa se preocupar com nada.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="cta-inner">
+    <span class="badge">Pronto para economizar?</span>
+    <h2>Comece a <span class="accent">gerar sua energia</span> este mês</h2>
+    <p>Simulação gratuita, sem compromisso. Nossa equipe entra em contato em até 24h com um projeto personalizado para você.</p>
+    <div class="cta-buttons">
+      <a href="#orcamento" class="btn-primary">Quero minha simulação grátis</a>
+      <a href="tel:+5543991903348" class="btn-ghost">(43) 99190-3348</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">Solar<span>Technology</span></div>
+      <p>Soluções em energia solar fotovoltaica para residências, empresas e indústrias em Arapongas e região.</p>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.97 1H6a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+5543991903348">(43) 99190-3348 — Comercial</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.97 1H6a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+5543991597998">(43) 99159-7998 — Pós-venda</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Av. Maracanã, 2188, Vila Industrial, Arapongas, PR
+      </div>
+      <div style="margin-top:1rem">
+        <span class="crea-badge">CREA 73962</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soluções</h4>
+      <ul>
+        <li><a href="#orcamento">Residencial</a></li>
+        <li><a href="#orcamento">Comercial</a></li>
+        <li><a href="#orcamento">Industrial</a></li>
+        <li><a href="#orcamento">Rural</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Solar Technology · Todos os direitos reservados</span>
+    <span>Arapongas, PR · CNPJ disponível sob consulta</span>
+  </div>
+</footer>
+
+<script>
+  // ─── SCROLL-CONTROLLED VIDEO ───
+  (function () {
+    const wrapper = document.getElementById('hero-wrapper');
+    const video   = document.getElementById('hero-video');
+    const bar     = document.getElementById('scroll-progress-bar');
+    const hint    = document.querySelector('.scroll-hint');
+
+    // Pause auto-play; scrub manually
+    video.pause();
+    video.currentTime = 0;
+
+    function syncVideo() {
+      const wTop       = wrapper.offsetTop;
+      const wHeight    = wrapper.offsetHeight;
+      const viewH      = window.innerHeight;
+      const scrollable = wHeight - viewH;
+      
+      let progress = 0;
+
+      if (scrollable > 0) {
+        // Desktop: Sticky wrapper mode
+        let scrolled = window.scrollY - wTop;
+        scrolled = Math.max(0, Math.min(scrolled, scrollable));
+        progress = scrolled / scrollable;
+      } else {
+        // Mobile: Non-sticky mode, scrub based on viewport intersection
+        const rect = video.getBoundingClientRect();
+        // progress = 0 when top of video hits bottom of viewport
+        // progress = 1 when bottom of video hits top of viewport
+        const totalTravel = viewH + rect.height;
+        let scrolled = viewH - rect.top;
+        scrolled = Math.max(0, Math.min(scrolled, totalTravel));
+        progress = scrolled / totalTravel;
+      }
+
+      if (video.readyState >= 1) {
+        // use a tiny offset from the end to avoid loop glitches
+        video.currentTime = progress * (video.duration - 0.1);
+      }
+
+      // progress bar
+      if (bar) bar.style.width = (progress * 100) + '%';
+
+      // hide scroll hint after user starts scrolling
+      if (hint) {
+        if (progress > 0.02) hint.style.opacity = '0';
+        else hint.style.opacity = '1';
+      }
+    }
+
+    video.addEventListener('loadedmetadata', syncVideo);
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(syncVideo);
+    }, { passive: true });
+    
+    // Fallback sync in case loadedmetadata already fired
+    if (video.readyState >= 1) syncVideo();
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-answer').style.maxHeight = '0';
+        el.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.benefit-card, .step, .projeto-card, .faq-item, .stat-item').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // Form submit → WhatsApp
+  const form = document.getElementById('lead-form');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn   = document.getElementById('submit-btn');
+      const nome  = document.getElementById('nome').value;
+      const tel   = document.getElementById('telefone').value;
+      const tipo  = document.getElementById('tipo').value;
+      const conta = document.getElementById('conta').value;
+      const msg   = encodeURIComponent(`Olá! Me chamo ${nome} e gostaria de uma simulação gratuita.\nTipo de imóvel: ${tipo}\nConta de luz: ${conta}\nTelefone: ${tel}`);
+      window.open(`https://wa.me/5543991903348?text=${msg}`, '_blank');
+      btn.textContent = 'Enviado! Retornaremos em breve.';
+      btn.style.background = '#16a34a';
+      setTimeout(() => { btn.textContent = 'Quero minha simulação grátis'; btn.style.background = ''; }, 4000);
+    });
+  }
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if(nav) nav.style.top = window.scrollY > 50 ? '0.5rem' : '1.25rem';
+  }, { passive: true });
+</script>
+</body>
+
