@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/", "destination": "/solar-technology", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/solar-technology", "destination": "/solar-technology/index.html" },
     { "source": "/solar-technology/(.*)", "destination": "/solar-technology/$1" }
