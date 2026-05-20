@@ -149,14 +149,11 @@
       box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
-    .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--white);
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
     }
-
-    .nav-logo span { color: var(--solar); }
 
     .nav-links {
       display: flex;
@@ -404,7 +401,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <div class="nav-logo">Solar<span>Technology</span></div>
+    <a href="#" class="nav-logo-link"><img src="/solar-technology/logo.png" alt="Solar Technology" class="nav-logo-img"></a>
     <ul class="nav-links">
       <li><a href="#beneficios">Benefícios</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
@@ -448,7 +445,7 @@
             <div class="trust-icon">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            25 anos de garantia
+            30 anos de garantia
           </div>
         </div>
 
@@ -583,6 +580,27 @@
 
   .section-header {
     margin-bottom: 4rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .section-header-text {
+    flex: 1;
+  }
+
+  .mascote-beneficios {
+    width: 280px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    flex-shrink: 0;
+    margin-bottom: -1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .mascote-beneficios { width: 200px; align-self: center; margin-top: 2rem; margin-bottom: 0; }
   }
 
   .section-header .badge { margin-bottom: 1rem; }
@@ -720,7 +738,7 @@
 <section id="stats">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-number">+500</div>
+      <div class="stat-number">+<span class="counter" data-target="1000">0</span></div>
       <div class="stat-label">Projetos entregues</div>
     </div>
     <div class="stat-item">
@@ -728,7 +746,7 @@
       <div class="stat-label">Redução na conta de luz</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">25</div>
+      <div class="stat-number">30</div>
       <div class="stat-label">Anos de garantia</div>
     </div>
     <div class="stat-item">
@@ -741,9 +759,12 @@
 <!-- BENEFITS -->
 <section id="beneficios">
   <div class="section-header">
-    <span class="badge">Por que energia solar</span>
-    <h2 class="section-title">Seu dinheiro trabalhando <span class="accent">por você</span></h2>
-    <p class="section-sub">Instalar energia solar não é custo — é investimento. Com retorno médio em 4 anos e vida útil de 25+, cada painel é rentabilidade garantida.</p>
+    <div class="section-header-text">
+      <span class="badge">Por que energia solar</span>
+      <h2 class="section-title">Seu dinheiro trabalhando <span class="accent">por você</span></h2>
+      <p class="section-sub">Instalar energia solar não é custo é investimento. Com retorno médio em 4 anos e vida útil de 30+, cada painel é rentabilidade garantida.</p>
+    </div>
+    <img src="/solar-technology/mascote.png" alt="Mascote Solar" class="mascote-beneficios">
   </div>
 
   <div class="benefits-grid">
@@ -1060,33 +1081,27 @@
 
   <div class="projetos-grid">
     <div class="projeto-card">
-      <div class="projeto-img-placeholder">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-      </div>
+      <img src="/solar-technology/matrix.jpg" alt="Usina da Matrix" class="projeto-img">
       <div class="projeto-info">
-        <div class="projeto-tag">Residencial</div>
-        <h3>Sistema 6,6 kWp</h3>
-        <p>Arapongas, PR · Economia de R$ 580/mês</p>
+        <div class="projeto-tag">Rural</div>
+        <h3>Usina da Matrix</h3>
+        <p>Rolândia, PR · Economia de R$ 40.000/mês</p>
       </div>
     </div>
     <div class="projeto-card">
-      <div class="projeto-img-placeholder" style="--seed:solar2">
-        <svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0H5m14 0h-5m-9 0H3m2 0h5m0 0V9a1 1 0 011-1h2a1 1 0 011 1v12"/></svg>
-      </div>
-      <div class="projeto-info">
-        <div class="projeto-tag">Comercial</div>
-        <h3>Usina 42 kWp · Moval Móveis</h3>
-        <p>Arapongas, PR · Economia de R$ 4.200/mês</p>
-      </div>
-    </div>
-    <div class="projeto-card">
-      <div class="projeto-img-placeholder" style="--seed:solar3">
-        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-      </div>
+      <img src="/solar-technology/moval.jpg" alt="Usina Moval Móveis" class="projeto-img">
       <div class="projeto-info">
         <div class="projeto-tag">Industrial</div>
-        <h3>Usina 120 kWp · Concrenorte</h3>
-        <p>Arapongas, PR · Economia de R$ 11.400/mês</p>
+        <h3>Usina da Moval Móveis</h3>
+        <p>Arapongas, PR · Economia de R$ 11.000/mês</p>
+      </div>
+    </div>
+    <div class="projeto-card">
+      <img src="/solar-technology/concrenorte.jpg" alt="Usina Concrenorte" class="projeto-img">
+      <div class="projeto-info">
+        <div class="projeto-tag">Industrial</div>
+        <h3>Usina da Concrenorte</h3>
+        <p>Arapongas, PR · Economia de R$ 4.200/mês</p>
       </div>
     </div>
   </div>
@@ -1254,7 +1269,7 @@
     gap: 3rem;
   }
 
-  .footer-brand .nav-logo { font-size: 1.25rem; margin-bottom: 0.75rem; }
+  .footer-brand .nav-logo-img { height: 48px; margin-bottom: 1rem; }
 
   .footer-brand p {
     font-size: 0.85rem;
@@ -1384,7 +1399,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Não. A manutenção é mínima — basicamente a limpeza dos painéis a cada 6 meses. Os equipamentos têm vida útil superior a 25 anos e oferecemos suporte técnico completo no pós-venda.</div>
+          <div class="faq-answer-inner">Não. A manutenção é mínima — basicamente a limpeza dos painéis a cada 6 meses. Os equipamentos têm vida útil superior a 30 anos e oferecemos suporte técnico completo no pós-venda.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1417,7 +1432,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="nav-logo">Solar<span>Technology</span></div>
+      <a href="#" class="nav-logo-link"><img src="/solar-technology/logo.png" alt="Solar Technology" class="nav-logo-img"></a>
       <p>Soluções em energia solar fotovoltaica para residências, empresas e indústrias em Arapongas e região.</p>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.97 1H6a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1542,9 +1557,35 @@
     });
   });
 
-  // Scroll reveal
+  // Scroll reveal and Counter
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    entries.forEach(e => { 
+      if (e.isIntersecting) { 
+        e.target.classList.add('visible'); 
+        
+        // Counter animation
+        if (e.target.classList.contains('stat-item')) {
+          const counter = e.target.querySelector('.counter');
+          if (counter && !counter.classList.contains('counted')) {
+            counter.classList.add('counted');
+            const target = +counter.getAttribute('data-target');
+            let current = 0;
+            const increment = target / 40; // 40 steps for smooth animation (~2 seconds)
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.innerText = target;
+                clearInterval(timer);
+              } else {
+                counter.innerText = Math.ceil(current);
+              }
+            }, 50);
+          }
+        }
+        
+        observer.unobserve(e.target); 
+      } 
+    });
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.benefit-card, .step, .projeto-card, .faq-item, .stat-item').forEach(el => {
@@ -1576,5 +1617,57 @@
     if(nav) nav.style.top = window.scrollY > 50 ? '0.5rem' : '1.25rem';
   }, { passive: true });
 </script>
+<style>
+  /* WHATSAPP FLOAT */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background-color 0.3s, box-shadow 0.3s;
+    animation: pulse-wa 2s infinite;
+  }
+  .whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+  }
+  .whatsapp-float:hover {
+    transform: translateY(-5px);
+    background-color: #128c7e;
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+  }
+  @keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 55px;
+      height: 55px;
+    }
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>
+
+<a href="https://wa.me/5543991903348?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20energia%20solar." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.031 0C5.385 0 0 5.386 0 12.031c0 2.126.55 4.195 1.597 6.012L.15 23.361l5.45-1.428A11.968 11.968 0 0 0 12.031 24c6.645 0 12.03-5.385 12.03-12.03S18.676 0 12.031 0zm.001 22.012c-1.802 0-3.565-.484-5.112-1.402l-.367-.217-3.799.996.996-3.704-.238-.378A9.97 9.97 0 0 1 2.016 12.03C2.016 6.516 6.516 2.016 12.032 2.016c5.514 0 10.015 4.5 10.015 10.014 0 5.516-4.501 10.016-10.015 10.016zm5.492-7.512c-.302-.152-1.782-.88-2.058-.98-.277-.101-.478-.152-.68.151-.202.304-.781.98-.957 1.182-.176.202-.353.228-.654.076-.302-.152-1.272-.469-2.423-1.496-.895-.798-1.5-1.783-1.676-2.086-.176-.304-.019-.468.132-.619.136-.137.302-.353.454-.53.151-.176.202-.303.302-.505.101-.202.051-.379-.025-.531-.076-.152-.68-1.643-.93-2.249-.244-.592-.493-.512-.68-.521-.176-.008-.378-.01-.58-.01-.202 0-.529.076-.806.379-.277.303-1.057 1.034-1.057 2.522 0 1.488 1.082 2.926 1.233 3.129.151.202 2.133 3.255 5.168 4.563 2.052.887 2.858.955 3.904.796 1.127-.172 3.473-1.418 3.963-2.787.49-1.368.49-2.54.34-2.787-.152-.248-.555-.401-.856-.553z"/>
+  </svg>
+</a>
 </body>
 
